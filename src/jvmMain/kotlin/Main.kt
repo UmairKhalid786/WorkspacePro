@@ -1,7 +1,10 @@
 // Copyright 2000-2021 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+import aboutMe.AboutMe
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.key.Key
@@ -16,6 +19,8 @@ fun main() = application {
     var isOpen by remember { mutableStateOf(true) }
     if (isOpen.not()) return@application
 
+    var isAboutMeOpen by remember { mutableStateOf(false) }
+
     Window(
         onCloseRequest = {
             isOpen = false
@@ -24,7 +29,9 @@ fun main() = application {
     ) {
         MenuBar {
             Menu("Actions", mnemonic = 'A') {
-                Item("About", onClick = { })
+                Item("About", onClick = {
+                    isAboutMeOpen = true
+                })
                 Separator()
                 Item("Exit", onClick = { isOpen = false }, shortcut = KeyShortcut(Key.Escape), mnemonic = 'E')
             }
@@ -34,11 +41,12 @@ fun main() = application {
             LeftPanel()
             ChatDetailScreen("Mark", Modifier.fillMaxWidth())
         }
+
+        if (isAboutMeOpen) {
+            AboutMe {
+                isAboutMeOpen = false
+            }
+        }
     }
 }
-
-fun openAboutMeWindow() {
-
-}
-
 

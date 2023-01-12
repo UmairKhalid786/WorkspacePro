@@ -29,18 +29,18 @@ kotlin {
         val commonMain by getting {
             dependencies {
 
-                implementation("io.ktor:ktor-client-core:${ktor_version}")
-                implementation("io.ktor:ktor-client-cio:${ktor_version}")
-                implementation("io.ktor:ktor-client-serialization:${ktor_version}")
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.serialization)
 
-                implementation("io.ktor:ktor-client-content-negotiation:${ktor_version}")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:${ktor_version}")
+                implementation(libs.ktor.client.negotiation)
+                implementation(libs.ktor.client.serialization.kotlinx)
 
-                implementation("io.ktor:ktor-client-logging:${ktor_version}")
+                implementation(libs.ktor.client.logging)
 
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-                implementation("org.jetbrains.kotlin:kotlin-stdlib:1.2.30")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+                implementation(libs.jetbrains.serialization.kotlinx)
+                implementation(libs.jetbrains.kotlin.stdlib)
+                implementation(libs.jetbrains.kotlin.coroutines)
             }
         }
         val jvmMain by getting {
@@ -48,10 +48,11 @@ kotlin {
                 dependsOn(commonMain)
                 implementation(compose.desktop.currentOs)
                 implementation(compose.material)
-                implementation("br.com.devsrsouza.compose.icons.jetbrains:simple-icons:1.0.0")
-                implementation("br.com.devsrsouza.compose.icons.jetbrains:font-awesome:1.0.0")
-                implementation("br.com.devsrsouza.compose.icons.jetbrains:tabler-icons:1.0.0")
-                implementation("br.com.devsrsouza.compose.icons.jetbrains:line-awesome:1.0.0")
+                // Icons libraries
+                implementation(libs.devsrsouza.compose.jetbrains.simple.icons)
+                implementation(libs.devsrsouza.compose.jetbrains.font.awesome)
+                implementation(libs.devsrsouza.compose.jetbrains.tabler.icon)
+                implementation(libs.devsrsouza.compose.jetbrains.line.awesome)
             }
         }
         val jvmTest by getting
@@ -64,7 +65,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "WorkSpacePro"
-            packageVersion = "1.0.0"
+            packageVersion = "1.0.1"
         }
     }
 }

@@ -26,7 +26,9 @@ fun AboutMe(onClose: () -> Unit) {
                Spacer(modifier = Modifier.height(20.dp))
                Text("WorkspacePro is a open source project built for you ♥️")
                Spacer(modifier = Modifier.height(20.dp))
-               Text("v1.0.0")
+               // Dynamic version will only be displayed if executed from
+               // Tasks -> compose desktop -> runDistribution
+               Text("v${System.getProperty("jpackage.app-version") ?: "1.0.0 debug"}")
            }
         }
     }

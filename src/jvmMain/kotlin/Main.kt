@@ -2,44 +2,19 @@
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.window.Tray
-import androidx.compose.ui.window.Window
-import androidx.compose.ui.window.application
-import androidx.compose.ui.window.rememberTrayState
-import compose.icons.LineAwesomeIcons
-import compose.icons.lineawesomeicons.*
+import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.input.key.KeyShortcut
+import androidx.compose.ui.window.*
 import home.LeftPanel
-import topMenu.TrayIcon
-import widgets.IconWithLabelVertical
-import widgets.IconWithLabelHorizontal
 
 
+@OptIn(ExperimentalComposeUiApi::class)
 fun main() = application {
 
     var isOpen by remember { mutableStateOf(true) }
     if (isOpen.not()) return@application
-
-    val trayState = rememberTrayState()
-
-    Tray(
-        state = trayState,
-        icon = TrayIcon,
-        menu = {
-            Item(
-                "About Me",
-                onClick = {
-                    openAboutMeWindow()
-                }
-            )
-            Item(
-                "Exit",
-                onClick = {
-                    isOpen = false
-                }
-            )
-        }
-    )
 
     Window(
         onCloseRequest = {
@@ -47,6 +22,14 @@ fun main() = application {
         },
         title = "Skype Clone",
     ) {
+        MenuBar {
+            Menu("Actions", mnemonic = 'A') {
+                Item("About", onClick = { })
+                Separator()
+                Item("Exit", onClick = { isOpen = false }, shortcut = KeyShortcut(Key.Escape), mnemonic = 'E')
+            }
+        }
+
         Row(modifier = Modifier.fillMaxWidth().background(color = BG_COLOR)) {
             LeftPanel()
             ChatDetailScreen("Mark", Modifier.fillMaxWidth())

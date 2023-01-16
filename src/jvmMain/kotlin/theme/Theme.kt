@@ -24,8 +24,9 @@ private val LightColors = lightColors(
     primary = opacWhite,
     secondary = primary,
     surface = primary,
-    onPrimary = Color.LightGray,
-    onSecondary = opacWhite
+    onPrimary = Color.Black,
+    onSecondary = opacWhite,
+    onSurface = Color.Black
 )
 
 @Composable

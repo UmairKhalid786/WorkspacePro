@@ -18,12 +18,12 @@ const val SPLASH_FAKE_DELAY = 2000L
 @Composable
 fun WelcomeScreen(
     onGotoHomeClick: () -> Unit,
-    onGotoSignupClick: () -> Unit,
+    onGotoSignInClick: () -> Unit,
 ) {
 
     LaunchedEffect(Unit){
         delay(SPLASH_FAKE_DELAY)
-        onGotoHomeClick()
+        onGotoSignInClick()
     }
 
     Column(

@@ -1,12 +1,11 @@
 package screens.signin
 
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -18,6 +17,12 @@ fun SigninScreen(
     onGotoHomeClick: () -> Unit,
     onGotoSignupClick: () -> Unit,
 ) {
+    var scale = animateFloatAsState(0.5f)
+
+    LaunchedEffect(Unit){
+
+    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -26,21 +31,24 @@ fun SigninScreen(
         Image(
             painter = painterResource("icons/web/icon.png"),
             contentDescription = "Logo",
-            modifier = Modifier.size(200.dp)
+            modifier = Modifier.size(150.dp)
         )
         Spacer(modifier = Modifier.size(50.dp))
         Text("Welcome to WorkspacePro", style = MaterialTheme.typography.h4)
         Spacer(modifier = Modifier.size(25.dp))
-        Text("A skype clone")
+        TextField("", onValueChange = {
+
+        })
+
         Spacer(modifier = Modifier.size(50.dp))
-        CircularProgressIndicator()
+
         // Go back button
         Button(onClick = onGotoHomeClick) {
             Text(text = "Home")
         }
         // Go back button
-        Button(onClick = onGotoHomeClick) {
-            Text(text = "Signup")
+        TextButton(onClick = onGotoSignupClick) {
+            Text(text = "Signup if you haven't created account yet !!")
         }
     }
 }

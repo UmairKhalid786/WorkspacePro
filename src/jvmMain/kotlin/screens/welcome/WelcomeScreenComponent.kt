@@ -14,7 +14,7 @@ class WelcomeScreenComponent(
     override fun render() {
         WelcomeScreen(
             onGotoHomeClick = onGoToHomeClicked,
-            onGotoSignupClick = onGoToSignupClicked
+            onGotoSignInClick = onGoToSignupClicked
         )
     }
 }

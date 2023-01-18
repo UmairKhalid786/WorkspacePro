@@ -57,7 +57,7 @@ class NavHostComponent(
             is ScreenConfig.Welcome -> WelcomeScreenComponent(
                 componentContext,
                 ::gotToHome,
-                ::gotToSignupClick
+                ::gotToSignin
             )
 
             is ScreenConfig.Chat -> ChatScreenComponent(
@@ -95,6 +95,13 @@ class NavHostComponent(
      */
     private fun gotToSignupClick() {
         navigation.push(ScreenConfig.Signup)
+    }
+
+    /**
+     * Invoked when `GO` button clicked (InputScreen)
+     */
+    private fun gotToSignin() {
+        navigation.push(ScreenConfig.Signin)
     }
 
     /**

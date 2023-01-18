@@ -1,10 +1,9 @@
-import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization") version "1.4.10"
-    id("org.jetbrains.compose")
+    id("org.jetbrains.compose") version "1.2.2"
 }
 
 val ktor_version: String by project
@@ -41,6 +40,7 @@ kotlin {
                 implementation(libs.jetbrains.serialization.kotlinx)
                 implementation(libs.jetbrains.kotlin.stdlib)
                 implementation(libs.jetbrains.kotlin.coroutines)
+                implementation(libs.jetbrains.kotlin.coroutines.swing)
             }
         }
         val jvmMain by getting {
@@ -48,6 +48,10 @@ kotlin {
                 dependsOn(commonMain)
                 implementation(compose.desktop.currentOs)
                 implementation(compose.material)
+                implementation(compose.materialIconsExtended)
+                // Decompose : Decompose
+                implementation(libs.decompose)
+                implementation(libs.decompose.extensions)
                 // Icons libraries
                 implementation(libs.devsrsouza.compose.jetbrains.simple.icons)
                 implementation(libs.devsrsouza.compose.jetbrains.font.awesome)
@@ -55,13 +59,12 @@ kotlin {
                 implementation(libs.devsrsouza.compose.jetbrains.line.awesome)
             }
         }
-        val jvmTest by getting
     }
 }
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "mainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "WorkSpacePro"

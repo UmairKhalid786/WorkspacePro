@@ -1,17 +1,14 @@
 package screens.signin
 
-import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun SigninScreen(
@@ -19,12 +16,18 @@ fun SigninScreen(
     onGotoSignupClick: () -> Unit,
 ) {
 
+    var loaded by remember { mutableStateOf(false) }
+    val animatedSize by animateDpAsState(
+        targetValue = if (loaded) 150.dp else 200.dp , animationSpec = tween(
+            durationMillis = 500,
+            easing = LinearEasing
+        )
+    )
+
     var email by remember { mutableStateOf("") }
 
-    var loaded by remember { mutableStateOf(false) }
-    val scale = animateFloatAsState(if (loaded)  0.8f else 1f)
 
-    LaunchedEffect(Unit){
+    LaunchedEffect(Unit) {
         loaded = true
     }
 
@@ -36,14 +39,16 @@ fun SigninScreen(
         Image(
             painter = painterResource("icons/web/icon.png"),
             contentDescription = "Logo",
-            modifier = Modifier.size(200.dp).scale(scale.value)
+            modifier = Modifier.width(animatedSize.value.dp)
         )
         Spacer(modifier = Modifier.size(50.dp))
-        Text("Welcome to WorkspacePro", style = MaterialTheme.typography.h4)
+        Text("Signin to WorkspacePro", style = MaterialTheme.typography.h4)
         Spacer(modifier = Modifier.size(25.dp))
 
         TextField(email, onValueChange = {
             email = it
+        }, placeholder = {
+            Text("demo@gmail.com", color = MaterialTheme.colors.onSecondary.copy(0.3F))
         })
 
         Spacer(modifier = Modifier.size(50.dp))

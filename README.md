@@ -15,3 +15,11 @@ A simple UX created in Jetpack Compose Multiplatforms + Kotlin Multiplatfroms
 
 ### About Me
 <img width="406" alt="Screenshot 2023-01-12 at 01 56 44" src="https://user-images.githubusercontent.com/21205138/211950388-4235fcd3-8fa7-4c6e-b270-16b470d6b9c3.png">
+
+### Signin
+<img width="801" alt="Screenshot 2023-01-19 at 23 22 12" src="https://user-images.githubusercontent.com/21205138/213576335-d2844176-56d7-4042-acba-3d6ee37eafec.png">
+
+### Splash
+![loading](https://user-images.githubusercontent.com/21205138/213576452-2e2f20f9-f045-4ca1-ac28-aace0c558f3b.png)
+
+

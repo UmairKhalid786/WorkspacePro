@@ -1,4 +1,4 @@
-package screens.sinup
+package screens.signup
 
 import androidx.compose.runtime.Composable
 import com.arkivanov.decompose.ComponentContext

@@ -2,7 +2,6 @@ package home.chat
 
 import ACCENT_COLOR
 import BG_COLOR
-import DIM_TEXT_COLOR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -37,14 +36,14 @@ fun ChatItem(myChat: Boolean) {
 @Composable
 fun MyChatItem(isFirstChat: Boolean) {
     ChatItemContainer(isFirstChat, Alignment.End) {
-        ChatBubble("Hello your chat", Modifier, Alignment.End, BG_COLOR, DIM_TEXT_COLOR)
+        ChatBubble("Hello your chat", Modifier, Alignment.End, BG_COLOR)
     }
 }
 
 @Composable
 fun TheirChatItem(isFirstChat: Boolean) {
     ChatItemContainer(isFirstChat, Alignment.Start) {
-        ChatBubble("Hello my chat", it, Alignment.Start, ACCENT_COLOR, textColor = DIM_TEXT_COLOR)
+        ChatBubble("Hello my chat", it, Alignment.Start, ACCENT_COLOR)
     }
 }
 
@@ -73,17 +72,16 @@ fun ChatBubble(
     text: String,
     modifier: Modifier,
     horizontalAlignment: Alignment.Horizontal,
-    color: Color,
-    textColor: Color
+    color: Color
 ) {
     val date by remember { derivedStateOf { SimpleDateFormat("hh:mm dd-MM-yyyy").format(Date(System.currentTimeMillis())) } }
     Column(
         modifier = modifier.background(color = color, shape = RoundedCornerShape(12.dp)).padding(16.dp),
         horizontalAlignment = horizontalAlignment
     ) {
-        Text(text, color = textColor)
+        Text(text)
         Spacer(modifier = Modifier.padding(4.dp))
-        Text(date, style = MaterialTheme.typography.caption, color = textColor.copy(alpha = 0.7F))
+        Text(date, style = MaterialTheme.typography.caption)
     }
 }
 

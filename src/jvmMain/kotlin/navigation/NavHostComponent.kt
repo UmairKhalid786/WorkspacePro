@@ -17,7 +17,7 @@ import screens.chat.ChatScreenComponent
 import screens.home.HomeScreenComponent
 import screens.profile.ProfileScreenComponent
 import screens.signin.SigninScreenComponent
-import screens.sinup.SignupScreenComponent
+import screens.signup.SignupScreenComponent
 import screens.welcome.WelcomeScreenComponent
 
 /**
@@ -51,7 +51,7 @@ class NavHostComponent(
             is ScreenConfig.Signup -> SignupScreenComponent(
                 componentContext,
                 ::gotToHome,
-                ::gotToSignupClick
+                ::onGoBackClicked
             )
 
             is ScreenConfig.Welcome -> WelcomeScreenComponent(

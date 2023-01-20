@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toComposeImageBitmap
 import androidx.compose.ui.input.pointer.PointerEventType
 import androidx.compose.ui.input.pointer.onPointerEvent
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import java.net.URL
 
@@ -39,11 +40,17 @@ fun IconTitleItemWidget(title: String, description: String, url: URL, expanded: 
         if (expanded) {
             Spacer(Modifier.padding(8.dp))
             Column(modifier = Modifier.weight(1.0f, true)) {
-                Text(title, modifier = Modifier, color = DIM_TEXT_COLOR)
+                Text(title, modifier = Modifier)
                 Spacer(Modifier.padding(4.dp))
-                Text(description, modifier = Modifier, color = DIM_TEXT_COLOR.copy(alpha = 0.6F))
+                Text(
+                    description,
+                    modifier = Modifier,
+                    color = DIM_TEXT_COLOR.copy(alpha = 0.6F),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
             }
-            Text("20/1/2021", modifier = Modifier, color = DIM_TEXT_COLOR.copy(alpha = 0.6F))
+            Text("20/1/2021", modifier = Modifier)
         }
     }
 }

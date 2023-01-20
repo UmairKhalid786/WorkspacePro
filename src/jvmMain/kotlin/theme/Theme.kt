@@ -5,8 +5,10 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.platform.Font
+import androidx.compose.ui.unit.sp
 
 val primary = Color(48, 163, 230)
 val secondary = Color(24, 25, 29)
@@ -36,7 +38,10 @@ fun DecomposeDesktopExampleTheme(
     MaterialTheme(
         colors = LightColors,
         typography = Typography(
-            defaultFontFamily = FontFamily(Font("google_sans_regular.ttf"))
+            defaultFontFamily = FontFamily(Font("google_sans_regular.ttf")),
+            body1 = TextStyle(
+                fontSize = 14.sp
+            )
         )
     ) {
         Surface(

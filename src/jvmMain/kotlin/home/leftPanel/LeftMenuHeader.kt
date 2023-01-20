@@ -26,7 +26,7 @@ fun LeftMenuHeader(expanded: Boolean) {
         )
         if (expanded) {
             Spacer(modifier = Modifier.size(8.dp))
-            Text("Umair Khalid", style = TextStyle(fontWeight = FontWeight.Medium), color = DIM_TEXT_COLOR)
+            Text("Umair Khalid", style = TextStyle(fontWeight = FontWeight.Medium))
             Spacer(modifier = Modifier.size(8.dp))
             Text("$0.00", style = MaterialTheme.typography.caption, color = DIM_TEXT_COLOR.copy(alpha = 0.7F))
             Spacer(Modifier.weight(1.0f, true))

@@ -26,3 +26,4 @@ A simple UX created in Jetpack Compose Multiplatforms + Kotlin Multiplatfroms
 <img width="804" alt="Screenshot 2023-01-20 at 01 51 10" src="https://user-images.githubusercontent.com/21205138/213594664-42bd6509-abb0-4218-978b-2c09946e1233.png">
 
 
+

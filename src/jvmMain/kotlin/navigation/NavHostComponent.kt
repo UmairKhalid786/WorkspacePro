@@ -29,7 +29,7 @@ class NavHostComponent(
     private val navigation = StackNavigation<ScreenConfig>()
     private val stack = childStack(
         source = navigation,
-        initialConfiguration = ScreenConfig.Welcome,
+        initialConfiguration = ScreenConfig.Home,
         childFactory = ::createScreenComponent
     )
 

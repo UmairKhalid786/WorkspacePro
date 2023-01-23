@@ -25,5 +25,6 @@ A simple UX created in Jetpack Compose Multiplatforms + Kotlin Multiplatfroms
 ### Sign up
 <img width="804" alt="Screenshot 2023-01-20 at 01 51 10" src="https://user-images.githubusercontent.com/21205138/213594664-42bd6509-abb0-4218-978b-2c09946e1233.png">
 
-
+### Action menu
+<img width="1114" alt="Screenshot 2023-01-23 at 00 50 29" src="https://user-images.githubusercontent.com/21205138/213947436-21329e2c-8b38-490e-be43-1e8f41d888dd.png">
 

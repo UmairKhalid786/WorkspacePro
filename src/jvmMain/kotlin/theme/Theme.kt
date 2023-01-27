@@ -1,5 +1,6 @@
 package theme
 
+import DIM_TEXT_COLOR
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -26,9 +27,9 @@ private val LightColors = lightColors(
     primary = opacWhite,
     secondary = primary,
     surface = primary,
-    onPrimary = Color.Black,
+    onPrimary = DIM_TEXT_COLOR,
     onSecondary = opacWhite,
-    onSurface = Color.Black
+    onSurface = DIM_TEXT_COLOR
 )
 
 @Composable

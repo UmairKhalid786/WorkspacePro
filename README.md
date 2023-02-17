@@ -2,7 +2,12 @@
 Project created for experiments with Kotlin multiplatfroms technologies / Jetpack compose multiplatforms
 
 ### Supported Clients
-Windows, MacOS and Linux
+Desktop Apps (Windows, MacOS and Linux)
+
+### Upcoming features
+- Android Support 
+- iOS (experiment API)
+
 
 ### NOTE
 I am not better software developer than you. Please contribute to this project to make it a play ground for the comminity.

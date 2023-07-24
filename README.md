@@ -7,9 +7,6 @@ Desktop Apps (Windows, MacOS and Linux)
 ### Upcoming features
 - Android Support 
 - iOS (experiment API) 
- 
-### NOTE
-I am not better software developer than you. Please contribute to this project to make it a play ground for the comminity.
 
 ### Tech Stack
 A simple UX created in Jetpack Compose Multiplatforms + Kotlin Multiplatfroms 
@@ -23,7 +20,7 @@ A simple UX created in Jetpack Compose Multiplatforms + Kotlin Multiplatfroms
 ### Splash
 ![loading](https://user-images.githubusercontent.com/21205138/213576452-2e2f20f9-f045-4ca1-ac28-aace0c558f3b.png)
 
-### Signin
+### Sign in
 <img width="801" alt="Screenshot 2023-01-19 at 23 22 12" src="https://user-images.githubusercontent.com/21205138/213576335-d2844176-56d7-4042-acba-3d6ee37eafec.png">
 
 ### Sign up

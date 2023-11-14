@@ -6,8 +6,8 @@ Desktop Apps (Windows, MacOS and Linux)
 
 ### Upcoming features
 - Android Support 
-- iOS (experiment API)
-
+- iOS
+ 
 ### Tech Stack
 A simple UX created in Jetpack Compose Multiplatforms + Kotlin Multiplatfroms 
 
